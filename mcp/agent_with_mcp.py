@@ -19,6 +19,7 @@ from openai import OpenAI
 import asyncio
 import sys
 from pathlib import Path
+import os
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import Settings
@@ -43,7 +44,7 @@ SERVERS = {
 }
 
 logging.basicConfig(
-    filename="agent_with_mcp.log",
+    filename=os.path.join(os.path.dirname(__file__), "agent_with_mcp.log"),
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     encoding="utf-8"
