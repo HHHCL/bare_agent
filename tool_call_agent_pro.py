@@ -3,6 +3,7 @@ import logging
 from openai import OpenAI
 from config import Settings
 from tools import *
+import os
 
 """
 从tool_call_agent修改到tool_call_agent_pro的步骤:
@@ -19,7 +20,7 @@ messages = [{"role": "system", "content":"你是一个有用的助手"}]
 max_rounds = 10
 
 logging.basicConfig(
-    filename="tool_call_agent.log",
+    filename=os.path.join(os.path.dirname(__file__), "tool_call_agent.log"),
     level=logging.INFO,  #这个设置会把httpx的底层网络细节全记录下来（TLS握手，请求头等）
     format="%(asctime)s [%(levelname)s] %(message)s",
     encoding="utf-8"
