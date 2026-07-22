@@ -26,7 +26,7 @@ from config import Settings
 
 config = Settings()
 
-MCP_DIR = "/Users/chunlian/Documents/claude_code/bare_agent/mcp"
+MCP_DIR = os.path.dirname(__file__)
 
 # 要连接的 MCP server：直接用 uv run 启动你自己写的 server。
 # （.mcp.json 里那层 mcp_logger.py 是给 Claude Code 记日志用的包装，agent 直连不需要。）
