@@ -15,7 +15,7 @@
 from contextlib import AsyncExitStack
 import json
 import logging
-
+import os
 from mcp import ClientSession, StdioServerParameters, stdio_client
 from openai import OpenAI
 import asyncio
@@ -27,7 +27,7 @@ from config import Settings
 
 config = Settings()
 
-MCP_DIR = "/Users/chunlian/Documents/claude_code/bare_agent/mcp"
+MCP_DIR = os.path.dirname(__file__)
 
 # MCP server 配置：定义如何启动每个 server
 SERVER_CONFIGS = {
