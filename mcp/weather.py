@@ -5,7 +5,7 @@ from mcp.server.fastmcp import FastMCP
 import logging
 
 logging.basicConfig(
-    filename="/Users/chunlian/Documents/claude_code/bare_agent/mcp/weather.log",
+    filename=os.path.join(os.path.dirname(__file__), "weather.log"),
     level=logging.DEBUG,  #这个设置会把httpx的底层网络细节全记录下来（TLS握手，请求头等）
     format="%(asctime)s [%(levelname)s] %(message)s",
     encoding="utf-8"
