@@ -1,10 +1,11 @@
 from mcp.server.fastmcp import FastMCP
 import logging
+import os
 
 mcp = FastMCP("caculator")
 
 logging.basicConfig(
-    filename="/Users/chunlian/Documents/claude_code/bare_agent/mcp/caculator.log",
+    filename=os.path.join(os.path.dirname(__file__), "caculator.log"),
     level=logging.DEBUG,
     format="%(asctime)s [%(levelname)s] %(message)s",
     encoding="utf-8"
